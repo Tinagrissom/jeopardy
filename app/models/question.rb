@@ -20,4 +20,9 @@ class Question
       #   { name: 'Vader', age:25 }
       # ]
     end
+
+    def self.find(id)
+        results = DB.exec("SELECT * FROM questions WHERE id=#{id};")
+        return results
+    end
 end
