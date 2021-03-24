@@ -23,6 +23,12 @@ class Question
 
     def self.find(id)
         results = DB.exec("SELECT * FROM questions WHERE id=#{id};")
-        return results
+        return {
+            "id" => results.first["id"].to_i,
+            "question" => results.first["question"],
+            "points" => results.first["points"].to_i,
+            "category" => results.first["category"],
+            "answer" => results.first["answer"]
+        }
     end
 end
