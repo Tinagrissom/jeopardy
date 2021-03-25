@@ -28,7 +28,24 @@ class Question
             "question" => results.first["question"],
             "points" => results.first["points"].to_i,
             "category" => results.first["category"],
-            "answer" => results.first["answer"]
+            "answer" => results.first["answer"],
+        }
+    end
+
+    def self.create(opts)
+      results = DB.exec(
+      <<-SQL
+          INSERT INTO questions (question, points, category, answer)
+          VALUES ( '#{opts["question"]}', #{opts["points"]}, '#{opts["category"]}', '#{opts["answer"]}' )
+          RETURNING id, question, points, category, answer;
+      SQL
+  )
+        return {
+          "id" => results.first["id"].to_i,
+          "question" => results.first["question"],
+          "points" => results.first["points"].to_i,
+          "category" => results.first["category"],
+          "answer" => results.first["answer"],
         }
     end
 end
