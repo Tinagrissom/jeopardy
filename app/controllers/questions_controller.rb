@@ -10,6 +10,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-      render json: Question.create(params["question"])
+      render json: Question.create(params)
   end
 end
