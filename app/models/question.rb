@@ -1,3 +1,5 @@
+require 'pp'
+
 class Question
   DB = PG.connect({:host => "localhost", :port => 5432, :dbname => 'jeopardy_development'})
     def self.all
@@ -33,6 +35,7 @@ class Question
     end
 
     def self.create(opts)
+      pp opts
       results = DB.exec(
       <<-SQL
           INSERT INTO questions (question, points, category, answer)
