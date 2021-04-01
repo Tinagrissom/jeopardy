@@ -10,6 +10,16 @@ class QuestionsController < ApplicationController
   end
 
   def create
+      puts params
       render json: Question.create(params)
+  end
+
+  def delete
+    render json: Question.delete(params["id"])
+  end
+
+  def update
+    puts params
+    render json: Question.update(params["id"], params)
   end
 end
