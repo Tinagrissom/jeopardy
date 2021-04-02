@@ -13,14 +13,6 @@ class Question
           "answer" => result["answer"]
         }
       end
-      # results.each do |result|
-      #   puts result
-      # end
-      # [
-      #   { name: 'Darth Vader', age:45 },
-      #   { name: 'Darth', age:65 },
-      #   { name: 'Vader', age:25 }
-      # ]
     end
 
     def self.find(id)
