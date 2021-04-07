@@ -1,10 +1,20 @@
 .game-board, .categories, .questions {
   border: 2px solid black;
   padding: 20px;
-  background-color: #190AB1;
+  background-color: #060DE3;
   color: #DFC653;
 }
 .categories, .questions {
   width: 20%;
   text-align: center;
+}
+.categories {
+  color: #DFE1F5;
+  background-image: url("https://www.newscaststudio.com/wp-content/uploads/2019/09/jeopardy-season-36-open.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.catagories:active {
+  background-color: #060DE3
 }

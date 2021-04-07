@@ -15,7 +15,13 @@ class App extends Component {
     axios
       .get('/questions')
       .then(
-        (response) => this.setState({questions: response.data, question: '', points: '', category: '', answer: ''}),
+        (response) => this.setState({
+          questions: response.data,
+          question: '',
+          points: '',
+          category: '',
+          answer: ''
+        }),
       )
       .catch((error) => console.error(error))
   }
@@ -42,7 +48,7 @@ class App extends Component {
         {this.state.questions.map((question) => {
           return (
             <div className="questions">
-              <h2>{question.question}</h2>
+              <h2>${question.points}</h2>
             </div>
 
           )
