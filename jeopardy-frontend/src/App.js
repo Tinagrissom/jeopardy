@@ -45,13 +45,11 @@ class App extends Component {
         LET'S PLAY
         </button>
         <div className="game-board">
-            <div className="categories" style={{
-              backgroundImage: "url(https://www.newscaststudio.com/wp-content/uploads/2019/09/jeopardy-season-36-open.jpg)",
-            }}>
+            <div>
               {this.state.reveal === true ?
-                <div style={{
+                <div className="categories" style={{
                   backgroundColor:"#060DE3",
-                  backgroundImage:"none",
+                  margin:"0",
                   backgroundSize:"cover",
                 }}>
                   {this.state.questions.map((category, i) => {
@@ -62,7 +60,12 @@ class App extends Component {
                     }
                   })}
                 </div>
-            : '' }
+            : <div className="categories" style={{
+              backgroundImage: "url(https://www.newscaststudio.com/wp-content/uploads/2019/09/jeopardy-season-36-open.jpg)",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}></div> }
             </div>
 
         {this.state.questions.map((question) => {
