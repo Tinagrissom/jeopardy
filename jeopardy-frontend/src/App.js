@@ -40,10 +40,11 @@ class App extends Component {
   render = () => {
     return (
       <div>
-        <h1>Jeopardy</h1>
-        <button type="button" id="open" onClick={this.revealCategories}>
-        LET'S PLAY
-        </button>
+        <div id="title">
+            <button type="button" id="open" onClick={this.revealCategories}>
+            LET'S PLAY
+            </button>
+        </div>
         <div className="game-board">
             <div>
               {this.state.reveal === true ?
