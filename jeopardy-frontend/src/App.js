@@ -28,21 +28,26 @@ class App extends Component {
     return (
       <div>
         <h1>Jeopardy</h1>
-        <div className="categories">
-          {this.state.questions.map((category, i) => {
-            if (i === 0) {
-            return (
-              <h2>{category.category}</h2>
-            )
-          }
-          })}
-        </div>
+        <div className="game-board">
+            <div className="categories">
+              {this.state.questions.map((category, i) => {
+                if (i === 0) {
+                return (
+                  <h2>{category.category}</h2>
+                )
+              }
+              })}
+            </div>
+
         {this.state.questions.map((question) => {
           return (
-            <h2>{question.question}</h2>
+            <div className="questions">
+              <h2>{question.question}</h2>
+            </div>
+
           )
         })}
-
+      < /div>
       </div>
     )
   }
