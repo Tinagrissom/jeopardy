@@ -1,8 +1,17 @@
-.game-board, .categories, .questions {
+body{
+  background-image: url("https://cdn.vox-cdn.com/thumbor/wkflkZ1maEF8THSmbVwTLWOKrIA=/1400x788/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/10140557/Screen_Shot_2018_02_01_at_7.38.26_PM.png");
+  background-position: center;
+  background-size: cover;
+}
+.categories, .questions {
   border: 5px solid black;
-  padding: 20px;
+  padding: 5px;
   background-color: #060DE3;
   color: #DFC653;
+}
+.game-board {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .categories, .questions {
@@ -10,10 +19,24 @@
   text-align: center;
 }
 
+.questions {
+  font-size: 24px;
+}
+
 .categories {
   color: #DFE1F5;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100px;
+}
+
+#title {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5em;
+  padding-top: 0px;
+}
+
+button {
+  font-family: 'Michroma', sans-serif;
+  padding: 12px;
+  background-color: #91AEDD;
 }
