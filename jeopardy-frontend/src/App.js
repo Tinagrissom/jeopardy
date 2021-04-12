@@ -9,6 +9,7 @@ class App extends Component {
     category: '',
     answer: '',
     reveal: false,
+    show: false,
     questions: [],
   }
 
@@ -30,6 +31,12 @@ class App extends Component {
   revealCategories = () => {
     this.setState({
       reveal: true,
+    })
+  }
+
+  showQuestion = () => {
+    this.setState({
+      show: true,
     })
   }
 
@@ -81,7 +88,14 @@ class App extends Component {
         {this.state.questions.map((question) => {
           return (
             <div className="questions">
-              <h2>${question.points}</h2>
+            <button onClick={this.state.showQuestion}>
+              {this.state.show === true ?
+              <div>
+                <h1>Hello</h1>
+              </div>
+            :  <h2>${question.points}</h2>
+            }
+            </button>
             </div>
 
           )
