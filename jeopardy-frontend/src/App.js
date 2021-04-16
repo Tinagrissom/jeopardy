@@ -88,14 +88,14 @@ class App extends Component {
         {this.state.questions.map((question) => {
           return (
             <div className="questions">
-            <button onClick={this.state.showQuestion}>
+            <a type="button" onClick={this.showQuestion}>
               {this.state.show === true ?
               <div>
-                <h1>Hello</h1>
+                <h2>{question.question}</h2>
               </div>
             :  <h2>${question.points}</h2>
             }
-            </button>
+            </a>
             </div>
 
           )
