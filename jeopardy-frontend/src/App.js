@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Question from './Question'
 
 class App extends Component {
 
@@ -34,7 +35,7 @@ class App extends Component {
     })
   }
 
-  showQuestion = () => {
+  showQuestion = ({currentTarget}) => {
     this.setState({
       show: true,
     })
@@ -48,6 +49,7 @@ class App extends Component {
     return (
       <div>
       {/* HEADER */}
+
         <div id="title">
             <button type="button" id="open" onClick={this.revealCategories}>
             LET'S PLAY
@@ -88,19 +90,25 @@ class App extends Component {
         {this.state.questions.map((question) => {
           return (
             <div className="questions">
-            <a type="button" onClick={this.showQuestion}>
-              {this.state.show === true ?
-              <div>
-                <h2>{question.question}</h2>
-              </div>
-            :  <h2>${question.points}</h2>
-            }
-            </a>
+                <a type="button" onClick={this.showQuestion}>
+                  {this.state.show === true ?
+                      <div>
+                        <h2>{question.question}</h2>
+
+                      </div>
+                :
+                  <div>
+                    <h2>${question.points}</h2>
+                    <Question />
+                  </div>
+                }
+                </a>
+                </div>
+
+                )
+              })}
             </div>
 
-          )
-        })}
-      < /div>
       </div>
     )
   }
